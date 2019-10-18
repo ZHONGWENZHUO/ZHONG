@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>A Hugo website</title>
+    <link>/</link>
+    <description>Recent content on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ggplot2</title>
+      <link>/2019/09/23/ggplot2/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/09/23/ggplot2/</guid>
+      <description>Ggplot2/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */!function(a,b){&#34;object&#34;==typeof module&amp;&amp;&#34;object&#34;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(&#34;jQuery requires a window with a document&#34;);return b(a)}:b(a)}(&#34;undefined&#34;!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l=&#34;1.11.3&#34;,m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:&#34;&#34;,length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0a?b:0);return this.pushStack(c=0&amp;&amp;bc?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for(&#34;boolean&#34;==typeof g&amp;&amp;(j=g,g=arguments[h]||{},h++),&#34;object&#34;==typeof g||m.isFunction(g)||(g={}),h===i&amp;&amp;(g=this,h--);ih;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&amp;&amp;(j&amp;&amp;c&amp;&amp;(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&amp;&amp;m.isArray(a)?a:[]):f=a&amp;&amp;m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&amp;&amp;(g[d]=c));return g},m.extend({expando:&#34;jQuery&#34;+(l+Math.random()).replace(/\D/g,&#34;&#34;),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return&#34;function&#34;===m.type(a)},isArray:Array.isArray||function(a){return&#34;array&#34;===m.type(a)},isWindow:function(a){return null!=a&amp;&amp;a==a.window},isNumeric:function(a){return!m.isArray(a)&amp;&amp;a-parseFloat(a)+1=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||&#34;object&#34;!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&amp;&amp;!j.call(a,&#34;constructor&#34;)&amp;&amp;!j.call(a.constructor.prototype,&#34;isPrototypeOf&#34;))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+&#34;&#34;:&#34;object&#34;==typeof a||&#34;function&#34;==typeof a?h[i.call(a)]||&#34;object&#34;:typeof a},globalEval:function(b){b&amp;&amp;m.</description>
+    </item>
+    
+    <item>
+      <title>Cours-2-Data-Viz</title>
+      <link>/2019/09/16/cours-2-data-viz/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/09/16/cours-2-data-viz/</guid>
+      <description>data(&amp;quot;iris&amp;quot;)donnee_Iris=read.table(&amp;quot;C:/Users/10239/Desktop/iris.csv&amp;quot;, header = T, sep=&amp;quot;,&amp;quot;, row.names = 1) #row.names permet de très la premiére colonnes comme nom de lignes.View(donnee_Iris)dim(donnee_Iris) #il y a 150 lignes## [1] 150 5donnee_Iris[,1:4]## Sepal.Length Sepal.Width Petal.Length Petal.Width## 1 5.1 3.5 1.4 0.2## 2 4.9 3.0 1.4 0.2## 3 4.7 3.2 1.3 0.2## 4 4.6 3.1 1.5 0.2## 5 5.0 3.6 1.4 0.2## 6 5.</description>
+    </item>
+    
+    <item>
+      <title>Exercice_Matrices</title>
+      <link>/2019/09/16/exercice-matrices/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/09/16/exercice-matrices/</guid>
+      <description>C’est la pratique de la matrice du 16 septembre.library(&amp;quot;Stat2Data&amp;quot;)data(&amp;quot;HousesNY&amp;quot;)typeof(HousesNY)## [1] &amp;quot;list&amp;quot;maison_prix_NY= as.matrix(HousesNY)class(maison_prix_NY)## [1] &amp;quot;matrix&amp;quot;colnames(maison_prix_NY)= c(&amp;quot;Prix&amp;quot;, &amp;quot;Nb-Ch&amp;quot;, &amp;quot;Sdb&amp;quot;, &amp;quot;SupMai&amp;quot;, &amp;quot;Terrain&amp;quot;)maison_prix_NY[,4]= maison_prix_NY[,4]*0.092903*1000maison_prix_NY[,5]=maison_prix_NY[,5]*4046.8546maison_prix_NY[,1]= maison_prix_NY[,1]*1000*0.9mean(maison_prix_NY[,1])## [1] 102268.9summary(maison_prix_NY)## Prix Nb-Ch Sdb SupMai ## Min. : 34650 Min. :2.000 Min. :1.000 Min. : 66.15 ## 1st Qu.: 74430 1st Qu.:3.000 1st Qu.:1.500 1st Qu.:120.40 ## Median : 96300 Median :3.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.58.3" />
+
+
+<title>Exercice_Matrices - A Hugo website</title>
+<meta property="og:title" content="Exercice_Matrices - A Hugo website">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">AboutClass</a></li>
+    
+    <li><a href="https://github.com">GitHub</a></li>
+    
+    <li><a href="https://www.isen-lille.fr/">ISEN</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">3 min read</span>
+    
+
+    <h1 class="article-title">Exercice_Matrices</h1>
+
+    
+    <span class="article-date">2019-09-16</span>
+    
+
+    <div class="article-content">
+      
+
+
+<div id="cest-la-pratique-de-la-matrice-du-16-septembre." class="section level2">
+<h2>C’est la pratique de la matrice du 16 septembre.</h2>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<pre class="r"><code>library(&quot;Stat2Data&quot;)
+data(&quot;HousesNY&quot;)
+typeof(HousesNY)</code></pre>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<pre class="r"><code>maison_prix_NY= as.matrix(HousesNY)
+class(maison_prix_NY)</code></pre>
+<pre><code>## [1] &quot;matrix&quot;</code></pre>
+<pre class="r"><code>colnames(maison_prix_NY)= c(&quot;Prix&quot;, &quot;Nb-Ch&quot;, &quot;Sdb&quot;, &quot;SupMai&quot;, &quot;Terrain&quot;)
+maison_prix_NY[,4]= maison_prix_NY[,4]*0.092903*1000
+maison_prix_NY[,5]=maison_prix_NY[,5]*4046.8546
+maison_prix_NY[,1]= maison_prix_NY[,1]*1000*0.9</code></pre>
+<pre class="r"><code>mean(maison_prix_NY[,1])</code></pre>
+<pre><code>## [1] 102268.9</code></pre>
+<pre class="r"><code>summary(maison_prix_NY)</code></pre>
+<pre><code>##       Prix            Nb-Ch            Sdb            SupMai      
+##  Min.   : 34650   Min.   :2.000   Min.   :1.000   Min.   : 66.15  
+##  1st Qu.: 74430   1st Qu.:3.000   1st Qu.:1.500   1st Qu.:120.40  
+##  Median : 96300   Median :3.000   Median :2.000   Median :141.96  
+##  Mean   :102269   Mean   :3.396   Mean   :1.858   Mean   :155.90  
+##  3rd Qu.:126900   3rd Qu.:4.000   3rd Qu.:2.000   3rd Qu.:191.38  
+##  Max.   :177750   Max.   :6.000   Max.   :3.500   Max.   :288.00  
+##     Terrain     
+##  Min.   :    0  
+##  1st Qu.: 1093  
+##  Median : 1700  
+##  Mean   : 3231  
+##  3rd Qu.: 4452  
+##  Max.   :14164</code></pre>
+<pre class="r"><code>min(maison_prix_NY[,&quot;Prix&quot;])</code></pre>
+<pre><code>## [1] 34650</code></pre>
+<pre class="r"><code>min(maison_prix_NY[,1])</code></pre>
+<pre><code>## [1] 34650</code></pre>
+<pre class="r"><code>max(maison_prix_NY[,&quot;Prix&quot;])</code></pre>
+<pre><code>## [1] 177750</code></pre>
+<pre class="r"><code>maison_prix_NY[maison_prix_NY[,1]==34650,]</code></pre>
+<pre><code>##       Prix      Nb-Ch        Sdb     SupMai    Terrain 
+## 34650.0000     3.0000     1.0000   120.4023  5746.5335</code></pre>
+<pre class="r"><code>maison_prix_NY[maison_prix_NY[,&quot;Prix&quot;]==34650,]</code></pre>
+<pre><code>##       Prix      Nb-Ch        Sdb     SupMai    Terrain 
+## 34650.0000     3.0000     1.0000   120.4023  5746.5335</code></pre>
+<pre class="r"><code>maison_prix_NY[maison_prix_NY[,&quot;Prix&quot;]==177750,]</code></pre>
+<pre><code>##       Prix      Nb-Ch        Sdb     SupMai    Terrain 
+## 177750.000      4.000      2.500    210.704   4046.855</code></pre>
+<pre class="r"><code>maison_prix_NY[maison_prix_NY[,&quot;Prix&quot;]==177750,] = c(160000, 4,2.5, 210.704, 4046.855)
+maison_prix_NY[maison_prix_NY[,&quot;Prix&quot;]==160000,]</code></pre>
+<pre><code>##       Prix      Nb-Ch        Sdb     SupMai    Terrain 
+## 160000.000      4.000      2.500    210.704   4046.855</code></pre>
+<pre class="r"><code>maison_prix_NY[maison_prix_NY[,&quot;Prix&quot;]&lt;=100000,]</code></pre>
+<pre><code>##        Prix Nb-Ch Sdb    SupMai    Terrain
+##  [1,] 51840     3 2.0  89.18688  5260.9110
+##  [2,] 83250     3 1.0 123.46809  1699.6789
+##  [3,] 45000     2 1.0  90.48752  1375.9306
+##  [4,] 80100     2 2.0  95.59719  1173.5878
+##  [5,] 54000     3 1.0  81.75464  4046.8546
+##  [6,] 57150     3 2.0 165.46024   809.3709
+##  [7,] 96300     3 1.0 132.66548  8093.7092
+##  [8,] 74430     3 1.0 102.19330  8376.9890
+##  [9,] 67500     4 2.0 130.06420   607.0282
+## [10,] 78750     4 2.0 228.91299  1335.4620
+## [11,] 60750     4 1.0 140.74804   890.3080
+## [12,] 94500     5 2.0 253.81100  1497.3362
+## [13,] 90450     3 2.0 149.38802  2347.1757
+## [14,] 70200     2 1.0  66.14694  4734.8199
+## [15,] 89100     3 1.0  80.26819  6717.7786
+## [16,] 99000     3 1.5 121.88874   849.8395
+## [17,] 90000     3 2.0 111.48360 14163.9911
+## [18,] 47700     3 1.0 122.72486  1011.7137
+## [19,] 82800     3 2.0 168.61894     0.0000
+## [20,] 64800     3 2.0 133.96613   890.3080
+## [21,] 85500     3 2.0  78.03852  4168.2602
+## [22,] 34650     3 1.0 120.40229  5746.5335
+## [23,] 67500     2 2.0  72.46434   607.0282
+## [24,] 80100     4 1.0 211.26142  4046.8546
+## [25,] 67590     4 2.0 143.07062  1416.3991
+## [26,] 83250     3 2.0 166.29637  2954.2039
+## [27,] 73800     3 3.0 135.08096 10117.1365
+## [28,] 78300     3 1.5 161.65122  1011.7137</code></pre>
+<pre class="r"><code>dim(maison_prix_NY[maison_prix_NY[,&quot;Prix&quot;]&lt;=100000,])</code></pre>
+<pre><code>## [1] 28  5</code></pre>
+<pre class="r"><code>maison_prix_NY[maison_prix_NY[,&quot;Sdb&quot;]==3,]</code></pre>
+<pre><code>##        Prix Nb-Ch Sdb   SupMai    Terrain
+## [1,] 126000     4   3 261.8007   849.8395
+## [2,] 156600     4   3 128.3919  1942.4902
+## [3,]  73800     3   3 135.0810 10117.1365
+## [4,] 175500     4   3 171.6847  7446.2125</code></pre>
+<pre class="r"><code>colMeans(maison_prix_NY[maison_prix_NY[,&quot;Sdb&quot;]==3,])</code></pre>
+<pre><code>##        Prix       Nb-Ch         Sdb      SupMai     Terrain 
+## 132975.0000      3.7500      3.0000    174.2396   5088.9197</code></pre>
+</div>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="https://r-stat-sc-donnees.github.io/" class="footer-links-kudos" target="_blank">R</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+

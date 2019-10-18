@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VIZ on A Hugo website</title>
+    <link>/tags/viz/</link>
+    <description>Recent content in VIZ on A Hugo website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/viz/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cours-2-Data-Viz</title>
+      <link>/2019/09/16/cours-2-data-viz/</link>
+      <pubDate>Mon, 16 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/09/16/cours-2-data-viz/</guid>
+      <description>data(&amp;quot;iris&amp;quot;)donnee_Iris=read.table(&amp;quot;C:/Users/10239/Desktop/iris.csv&amp;quot;, header = T, sep=&amp;quot;,&amp;quot;, row.names = 1) #row.names permet de très la premiére colonnes comme nom de lignes.View(donnee_Iris)dim(donnee_Iris) #il y a 150 lignes## [1] 150 5donnee_Iris[,1:4]## Sepal.Length Sepal.Width Petal.Length Petal.Width## 1 5.1 3.5 1.4 0.2## 2 4.9 3.0 1.4 0.2## 3 4.7 3.2 1.3 0.2## 4 4.6 3.1 1.5 0.2## 5 5.0 3.6 1.4 0.2## 6 5.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,211 @@
+---
+title: "Ggplot2"
+author: ''
+date: '2019-09-23'
+slug: ggplot2
+tags: ggplot2
+categories: []
+---
+
+#####ggplot2
+
+Dans un premier point, il est nécessaire de charger le package ggplot2
+pour cela nous allons comprendre d'abord la structure d'un graphique sous ggplot2.
+Déjà, pour faire un graphique, nous allons additionner un ensemble de fonctions.
+un simple graphique sous ggplot2 aura besoin d'une fonction ggplot, une aesthétic, de fonction geom, fonction facet, fonction thème ...
+selon le besoin nous pouvons définir le graphique que nous souhaitons.
+Connaitre toutes les fonctionnalités de ggplot2 c'est très bien mais vous trouverai de la documentation facilement sur Github 
+
+
+
+```{r}
+library("ggplot2")
+```
+
+
+
+
+# Plot = data + aesthetics + Geometry
+
+Reprenons l'example du jeu de données Iris : 
+nous allons faire notre premier graphique où on va représenter sur l'axe des abscisses la longueur du pétal et sur l'axe des ordonnées la largeur du pétal.
+Donc le graphique g je vais d?finir une fonction ggplot qui prend en argument mon jeu de donn?e iris, et je peux ?galment d?finir la fonction aes pour aesth?tique o? j'indique quelle colonne prendre pour l'axe des x et quelle colonne prendre pour l'axe y.
+Ensuite, il faut repr?senter les ppoints et la, il faut appeler la fonction geom_point()
+ensuite je lance g pour voir le graphique.
+```{r}
+library("ggplot2")
+data("iris")
+#donnee_Iris=read.csv("iris.csv")
+donnee_Iris=read.table("C:/Users/10239/Desktop/iris.csv", header = T, sep=",", row.names = 1) #row.names permet de d?finir la premi?re colonnes comme nom de lignes.
+View(donnee_Iris)
+g<-ggplot(donnee_Iris, aes(x=Petal.Length, y=Petal.Width))
+```
+Ici je crée un nouveau graphique, je vais l'appeler g 
+
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width))
+g<-g+geom_point()
+g
+```
+
+Comme nous pouvons le remarquer ici, le graphique est vraiment basic et sans aucune couleur 
+nous pouvons l'interpr?ter mais ce n'est pas suffisant
+
+# couleur selon l'esp?ce (nous allons mettre des couleurs selon l'esp?ce.)
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Species))+geom_point()
+```
+
+
+
+# couleurs et formes des points diff?rentes selon l'esp?ce
+shape c'est la forme.
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Species, shape=Species))+geom_point()
+g
+```
+
+# modifier le fond de notre graphique
+```{r}
+g<-g+theme_minimal()
+g
+```
+
+
+
+
+# modifier taille des points
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Species, shape=Species))+geom_point(size=3)+theme_minimal()
+g
+```
+
+
+
+# cr?er un gradient de couleur
+j'ajoute ici la fonction scale_color_gradient de la couleur 
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Petal.Length, shape=Species))+geom_point(size=3)+theme_minimal()
+g<-g+scale_color_gradient(low="green", high="orange")
+g
+
+```
+
+# modifier la position de la l?gende (bottom, left, right)
+```{r}
+g<-g+theme(legend.position="top")
+g
+```
+
+
+# modifier couleur, texture du titre de la l?gende
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Petal.Length, shape=Species))+geom_point(size=3)
+g<-g+scale_color_gradient(low="green", high="orange")+theme_minimal()+theme(legend.title=element_text(colour="black", size=15, face="bold"))
+g
+```
+
+
+
+# modifier couleur, texture, taille des labels de ma l?gende
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Petal.Length, shape=Species))+geom_point(size=3)
+g<-g+scale_color_gradient(low="green", high="orange")+theme_minimal()+theme(legend.title=element_text(colour="black", size=15, face="bold"))
+g<-g+theme(legend.text=(element_text(colour="blue", size=10, face="bold.italic")))
+g
+```
+
+
+# steelblue
+# ajouter un cadre ?? notre l?gende
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Petal.Length, shape=Species))+geom_point(size=3)
+g<-g+scale_color_gradient(low="green", high="orange")+theme_minimal()+theme(legend.title=element_text(colour="red", size=15, face="bold"))
+g<-g+theme(legend.text=(element_text(colour="blue", size=8, face="bold.italic")))
+g
+```
+
+
+
+# modification des noms des axes et ajout d'un titre au graphique
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Petal.Length, shape=Species))+geom_point(size=3)
+g<-g+scale_color_gradient(low="green", high="orange")+theme_minimal()+theme(legend.title=element_text(colour="steelblue", size=9, face="bold"))
+g<-g+theme(legend.text=(element_text(colour="blue", size=8, face="bold.italic")))
+g<-g+xlab("Longueur des p?tales")+ylab("Largeur des p?tales")+ggtitle("Longueur des p?tales en fonction de largeur des p?tales")
+g<-g+theme(plot.title=element_text(colour="steelblue", size=15, face="bold"))
+g<-g+theme(axis.title=element_text(colour="steelblue", size=10, face="bold"))
+g<-g+theme(axis.text=element_text(colour="steelblue", size=10, face="bold", angle=45))
+#g<-g+theme(axis.line=element_line(colour="steelblue", size=2, linetype="dotted"))
+g
+
+```
+
+
+# modification des noms des axes et ajout d'un titre au graphique
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Petal.Length, shape=Species))+geom_point(size=3)
+g<-g+scale_color_gradient(low="green", high="orange")+theme_minimal()+theme(legend.title=element_text(colour="steelblue", size=9, face="bold"))
+g<-g+theme(legend.text=(element_text(colour="blue", size=8, face="bold.italic")))
+g<-g+xlab("Longueur des p?tales")+ylab("Largeur des p?tales")+ggtitle("Longueur des p?tales en fonction de largeur des p?tales")
+g<-g+theme(plot.title=element_text(colour="steelblue", size=15, face="bold"))
+g<-g+theme(axis.title=element_text(colour="steelblue", size=10, face="bold"))
+g<-g+theme(axis.text=element_text(colour="steelblue", size=10, face="bold", angle=45))
+#g<-g+theme(axis.line=element_line(colour="steelblue", size=2, linetype="dotted"))
+g
+
+```
+
+
+# facet_wrap -> combiner des graphiques
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Petal.Length, shape=Species))+geom_point(size=3)
+g<-g+scale_color_gradient(low="blue", high="red")+theme_minimal()+theme(legend.title=element_text(colour="steelblue", size=9, face="bold"))
+g<-g+theme(legend.text=(element_text(colour="blue", size=8, face="bold.italic")))
+g<-g+xlab("Longueur des p?tales")+ylab("Largeur des p?tales")+ggtitle("Longueur des p?tales en fonction de largeur des p?tales")
+g<-g+theme(plot.title=element_text(colour="steelblue", size=15, face="bold"))
+g<-g+theme(axis.title=element_text(colour="steelblue", size=10, face="bold"))
+g<-g+theme(axis.text=element_text(colour="steelblue", size=10, face="bold", angle=45))
+#g<-g+theme(axis.line=element_line(colour="steelblue", size=2, linetype="dotted"))
+g<-g+facet_wrap(~Species)+theme(strip.text=element_text(colour="steelblue", size=10, face="bold"))
+g<-g+theme(strip.background=element_rect(colour="steelblue", size=1,linetype="solid"))
+g
+```
+
+
+
+
+# modification des noms des axes et ajout d'un titre au graphique
+```{r}
+g<-ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Petal.Length, shape=Species))+geom_point(size=3)
+g<-g+scale_color_gradient(low="blue", high="red")+theme_minimal()+theme(legend.title=element_text(colour="steelblue", size=9, face="bold"))
+g<-g+theme(legend.text=(element_text(colour="blue", size=8, face="bold.italic")))
+g<-g+xlab("Longueur des p?tales")+ylab("Largeur des p?tales")+ggtitle("Longueur des p?tales en fonction de largeur des p?tales")
+g<-g+theme(plot.title=element_text(colour="steelblue", size=15, face="bold"))
+g<-g+theme(axis.title=element_text(colour="steelblue", size=10, face="bold"))
+g<-g+theme(axis.text=element_text(colour="steelblue", size=10, face="bold", angle=45))
+#g<-g+theme(axis.line=element_line(colour="steelblue", size=2, linetype="dotted"))
+g<-g+annotate("text", x=c(2,4,6), y=0.7, label=c("Setosa","Versicolor","Virginica"), colour="steelblue", size=3, fontface="bold")
+g<-g+annotate("rect", xmin=0.5, xmax=2.1, ymin=0, ymax=0.65, alpha=0.2, colour="steelblue", size=2)
+g<-g+annotate("segment", x=0.5, xend=4, y=1.5, yend=0, colour="steelblue", size=2, alpha=0.5)
+g
+
+```
+
+
+# histogramme sur les donn?es iris
+```{r}
+png("histogramme_iris.png")
+g<-ggplot(iris, aes(x=Petal.Length, fill=Species))+geom_histogram(color="white",binwidth =0.5)
+g
+dev.off()
+```
+
+
+```{r}
+pdf("boxplot_iris.pdf")
+g<-ggplot(iris, aes(x=Species, y=Petal.Length, fill=Species))+geom_boxplot()
+g<-g+ggtitle("Boxplot de la longueur des p?tales selon l'esp?ce")+xlab("Esp?ce")+ ylab("Longueur des p?tales")
+g
+dev.off()
+```

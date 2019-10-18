@@ -1,0 +1,61 @@
+---
+title: Exercice_Matrices
+author: ''
+date: '2019-09-16'
+slug: Exercice-Matrices
+categories: []
+tags:
+  - Matrices
+---
+C'est la pratique de la matrice du 16 septembre.
+-
+-
+-
+-
+-
+
+
+```{r}
+library("Stat2Data")
+data("HousesNY")
+typeof(HousesNY)
+maison_prix_NY= as.matrix(HousesNY)
+class(maison_prix_NY)
+colnames(maison_prix_NY)= c("Prix", "Nb-Ch", "Sdb", "SupMai", "Terrain")
+maison_prix_NY[,4]= maison_prix_NY[,4]*0.092903*1000
+maison_prix_NY[,5]=maison_prix_NY[,5]*4046.8546
+maison_prix_NY[,1]= maison_prix_NY[,1]*1000*0.9
+```
+
+```{r}
+mean(maison_prix_NY[,1])
+summary(maison_prix_NY)
+```
+
+```{r}
+min(maison_prix_NY[,"Prix"])
+min(maison_prix_NY[,1])
+```
+
+```{r}
+max(maison_prix_NY[,"Prix"])
+```
+
+```{r}
+maison_prix_NY[maison_prix_NY[,1]==34650,]
+maison_prix_NY[maison_prix_NY[,"Prix"]==34650,]
+maison_prix_NY[maison_prix_NY[,"Prix"]==177750,]
+maison_prix_NY[maison_prix_NY[,"Prix"]==177750,] = c(160000, 4,2.5, 210.704, 4046.855)
+maison_prix_NY[maison_prix_NY[,"Prix"]==160000,]
+maison_prix_NY[maison_prix_NY[,"Prix"]<=100000,]
+dim(maison_prix_NY[maison_prix_NY[,"Prix"]<=100000,])
+maison_prix_NY[maison_prix_NY[,"Sdb"]==3,]
+colMeans(maison_prix_NY[maison_prix_NY[,"Sdb"]==3,])
+```
+
+
+
+
+
+
+
