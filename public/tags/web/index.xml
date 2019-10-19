@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>web on Module de Base Data Report, Visualisation</title>
+    <link>/tags/web/</link>
+    <description>Recent content in web on Module de Base Data Report, Visualisation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Page web statique</title>
+      <link>/2019/10/19/comment-faire-une-page-web-statique/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/10/19/comment-faire-une-page-web-statique/</guid>
+      <description>Construisez une page Web statique avec blogdown + hugo + netlify + github Tout le logiciel dont nous avons besoin est：
+R(https://www.r-project.org/)
+rstudio(https://www.rstudio.com/)
+git(https://git-scm.com/)
+1.Installez blogdown et hugo install.packages(&amp;ldquo;blogdown&amp;rdquo;)
+blogdown::install_hugo()
+2.Configuration de l&amp;rsquo;environnement  Tools -&amp;gt; Global Options -&amp;gt; Sweave -&amp;gt; Weave Rnw files using:knitr
+ Tools -&amp;gt; Global Options -&amp;gt; Sweave -&amp;gt; Typeset LaTex into PDF using:XeLaTeX
+ Tools -&amp;gt; Global Options -&amp;gt; Git/SVN -&amp;gt; Git executable  3.</description>
+    </item>
+    
+  </channel>
+</rss>
