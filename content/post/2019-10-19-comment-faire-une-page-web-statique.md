@@ -43,11 +43,6 @@ blogdown::install_hugo()
   git init  
   git config --global user.name "Votre nom"  
   git config --global user.email "Votre adresse email github"   
-
-* github ->setting -> Developer settings->Personal access tokens->Generate new token  
-  Choisir tout,Puis copiez votre "token"
-  C'est ton mot de passe.
-  [![KQnWxs.md.jpg](https://s2.ax1x.com/2019/10/21/KQnWxs.md.jpg)](https://imgchr.com/i/KQnWxs)
   
 #### 6.Utilisation de blogdown
 
@@ -64,19 +59,25 @@ blogdown::install_hugo()
 #### 7.Utilisation de git
 * Cliquez sur commit
 [![Kn1Avn.md.png](https://s2.ax1x.com/2019/10/19/Kn1Avn.md.png)](https://imgchr.com/i/Kn1Avn)
-* Sélectionnez les fichiers à télécharger,Cliquez sur commit,Cliquez à nouveau sur PUSH
-* Votre fichier local est synchronisé avec votre github
+* Sélectionnez les fichiers à télécharger,Cliquez sur commit   
+* github ->setting -> Developer settings->Personal access tokens->Generate new token  
+  Choisir tout,Puis copiez votre "token"  
+  C'est ton mot de passe.  
+  [![KQnTaT.md.png](https://s2.ax1x.com/2019/10/21/KQnTaT.md.png)](https://imgchr.com/i/KQnTaT)
+  [![KQnWxs.md.jpg](https://s2.ax1x.com/2019/10/21/KQnWxs.md.jpg)](https://imgchr.com/i/KQnWxs)
+* Cliquez à nouveau sur PUSH  
+* Votre fichier local est synchronisé avec votre github  
 [![Kn16qP.md.png](https://s2.ax1x.com/2019/10/19/Kn16qP.md.png)](https://imgchr.com/i/Kn16qP)
 
 #### 8.Utilisation de netlify
-* S'inscrire avec un compte github
-* Créer un nouveau site web, lien vers github
+* S'inscrire avec un compte github  
+* Créer un nouveau site web, lien vers github  
 [![KnlZkD.md.png](https://s2.ax1x.com/2019/10/19/KnlZkD.md.png)](https://imgchr.com/i/KnlZkD)
-* Remplir de cette façon
+* Remplir de cette façon  
 [![KnlUpj.md.png](https://s2.ax1x.com/2019/10/19/KnlUpj.md.png)](https://imgchr.com/i/KnlUpj)
-* Tu peux changer ton nom
+* Tu peux changer ton nom  
 [![Knl29J.md.png](https://s2.ax1x.com/2019/10/19/Knl29J.md.png)](https://imgchr.com/i/Knl29J)
 
 #### 9.Dernier！！
-* Allez ici et votre site web est configuré, entrez votre URL pour l'ouvrir.
-* Vous pouvez modifier votre site Web localement et changer le style. Ensuite, synchronisez avec github via git.
+* Allez ici et votre site web est configuré, entrez votre URL pour l'ouvrir.  
+* Vous pouvez modifier votre site Web localement et changer le style. Ensuite, synchronisez avec github via git.  
